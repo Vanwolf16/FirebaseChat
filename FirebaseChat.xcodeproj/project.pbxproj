@@ -16,6 +16,8 @@
 		B4D12A4F2A201D4600A7681C /* FirebaseChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D12A4E2A201D4600A7681C /* FirebaseChatTests.swift */; };
 		B4D12A592A201D4700A7681C /* FirebaseChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D12A582A201D4700A7681C /* FirebaseChatUITests.swift */; };
 		B4D12A5B2A201D4700A7681C /* FirebaseChatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D12A5A2A201D4700A7681C /* FirebaseChatUITestsLaunchTests.swift */; };
+		B4D12A6D2A201E1600A7681C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D12A6C2A201E1600A7681C /* Extensions.swift */; };
+		B4D12A722A201EE800A7681C /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D12A712A201EE800A7681C /* ConversationsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		B4D12A542A201D4600A7681C /* FirebaseChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirebaseChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D12A582A201D4700A7681C /* FirebaseChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseChatUITests.swift; sourceTree = "<group>"; };
 		B4D12A5A2A201D4700A7681C /* FirebaseChatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseChatUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B4D12A6C2A201E1600A7681C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B4D12A712A201EE800A7681C /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,12 @@
 		B4D12A362A201D4400A7681C /* FirebaseChat */ = {
 			isa = PBXGroup;
 			children = (
+				B4D12A6E2A201E9A00A7681C /* API */,
+				B4D12A6B2A201E0700A7681C /* Utils */,
+				B4D12A6A2A201DF900A7681C /* Model */,
+				B4D12A692A201DED00A7681C /* ViewModel */,
+				B4D12A682A201DE300A7681C /* View */,
+				B4D12A672A201DD100A7681C /* Controller */,
 				B4D12A372A201D4400A7681C /* AppDelegate.swift */,
 				B4D12A392A201D4400A7681C /* SceneDelegate.swift */,
 				B4D12A3B2A201D4400A7681C /* ViewController.swift */,
@@ -125,6 +135,50 @@
 				B4D12A5A2A201D4700A7681C /* FirebaseChatUITestsLaunchTests.swift */,
 			);
 			path = FirebaseChatUITests;
+			sourceTree = "<group>";
+		};
+		B4D12A672A201DD100A7681C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B4D12A712A201EE800A7681C /* ConversationsController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B4D12A682A201DE300A7681C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B4D12A692A201DED00A7681C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B4D12A6A2A201DF900A7681C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B4D12A6B2A201E0700A7681C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B4D12A6C2A201E1600A7681C /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B4D12A6E2A201E9A00A7681C /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,7 +314,9 @@
 			files = (
 				B4D12A3C2A201D4400A7681C /* ViewController.swift in Sources */,
 				B4D12A382A201D4400A7681C /* AppDelegate.swift in Sources */,
+				B4D12A722A201EE800A7681C /* ConversationsController.swift in Sources */,
 				B4D12A3A2A201D4400A7681C /* SceneDelegate.swift in Sources */,
+				B4D12A6D2A201E1600A7681C /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
