@@ -2,7 +2,7 @@
 //  CustomTextField.swift
 //  TwitterClone
 //
-//  Created by David Murillo on 6/15/21.
+//  Created by David Murillo on .
 //
 
 import UIKit

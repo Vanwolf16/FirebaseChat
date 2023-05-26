@@ -8,7 +8,8 @@
 import UIKit
 
 class RegistrationController: UIViewController,UINavigationControllerDelegate{
-
+   private var viewModel = RegistrationViewModel()
+    
     //MARK: Properties
     private var profileImage:UIImage?
     
@@ -59,12 +60,13 @@ class RegistrationController: UIViewController,UINavigationControllerDelegate{
         button.backgroundColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
         button.setHeight(height: 50)
         button.addTarget(self, action: #selector(handleSignUpRegister), for: .touchUpInside)
+        button.isEnabled = false
         return button
     }()
     
     private let alreadyHaveAccountButton:UIButton = {
         let button = UIButton(type: .system)
-        button.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleShowLogIn), for: .touchUpInside)
         let attributedTitle = NSMutableAttributedString(string: "Already have an account?  ", attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16),NSAttributedString.Key.foregroundColor:UIColor.white])
         attributedTitle.append(NSAttributedString(string: "Log In!", attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 17),NSAttributedString.Key.foregroundColor:UIColor.white]))
         
@@ -87,13 +89,27 @@ class RegistrationController: UIViewController,UINavigationControllerDelegate{
      present(imagePickerController, animated: true, completion: nil)
     }
     
-    @objc func handleSignUp(){
-        
+    @objc func handleShowLogIn(){
+        navigationController?.popViewController(animated: true)
     }
     
     @objc func handleSignUpRegister(){
-        
+        print("Register On the way")
     }
+    
+    @objc func textDidChange(sender:UITextField){
+        if sender == emailTxtField{
+            viewModel.email = sender.text
+        }else if sender == passwordTxtField{
+            viewModel.password = sender.text
+        }else if sender == fullNameField{
+            viewModel.fullname = sender.text
+        }else{
+            viewModel.username = sender.text
+        }
+        checkFormStatus()
+    }
+    
     
     //Keyboard Function
     
@@ -139,10 +155,10 @@ class RegistrationController: UIViewController,UINavigationControllerDelegate{
         
         
         //textfield action
-        //emailTxtField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
-        //passwordTxtField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
-        //fullNameField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
-        //userNameField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        emailTxtField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTxtField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        fullNameField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        userNameField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         
     }
     
@@ -150,6 +166,17 @@ class RegistrationController: UIViewController,UINavigationControllerDelegate{
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+    
+    private func checkFormStatus(){
+        if viewModel.formIsValid{
+           signUpButton.isEnabled = true
+            signUpButton.backgroundColor = #colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1)
+        }else{
+            signUpButton.isEnabled = false
+            signUpButton.backgroundColor = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+        }
+    }
+    
 }
 
 //MARK: ImagePickerControllerDelegate
