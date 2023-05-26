@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B4CE33142A211ABF0081AE7E /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CE33132A211ABF0081AE7E /* ConversationCell.swift */; };
+		B4CE33172A211F380081AE7E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CE33162A211F380081AE7E /* LoginController.swift */; };
+		B4CE33192A211F4B0081AE7E /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CE33182A211F4B0081AE7E /* RegistrationController.swift */; };
+		B4CE331B2A2121ED0081AE7E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CE331A2A2121ED0081AE7E /* CustomTextField.swift */; };
+		B4CE331D2A2122A70081AE7E /* InputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CE331C2A2122A70081AE7E /* InputContainerView.swift */; };
 		B4D12A382A201D4400A7681C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D12A372A201D4400A7681C /* AppDelegate.swift */; };
 		B4D12A3A2A201D4400A7681C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D12A392A201D4400A7681C /* SceneDelegate.swift */; };
 		B4D12A3C2A201D4400A7681C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D12A3B2A201D4400A7681C /* ViewController.swift */; };
@@ -40,6 +44,10 @@
 
 /* Begin PBXFileReference section */
 		B4CE33132A211ABF0081AE7E /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
+		B4CE33162A211F380081AE7E /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		B4CE33182A211F4B0081AE7E /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		B4CE331A2A2121ED0081AE7E /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		B4CE331C2A2122A70081AE7E /* InputContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputContainerView.swift; sourceTree = "<group>"; };
 		B4D12A342A201D4400A7681C /* FirebaseChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D12A372A201D4400A7681C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4D12A392A201D4400A7681C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +96,15 @@
 				B4CE33132A211ABF0081AE7E /* ConversationCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		B4CE33152A211F1F0081AE7E /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				B4CE33162A211F380081AE7E /* LoginController.swift */,
+				B4CE33182A211F4B0081AE7E /* RegistrationController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		B4D12A2B2A201D4400A7681C = {
@@ -150,6 +167,7 @@
 		B4D12A672A201DD100A7681C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B4CE33152A211F1F0081AE7E /* Authentication */,
 				B4D12A712A201EE800A7681C /* ConversationsController.swift */,
 			);
 			path = Controller;
@@ -158,6 +176,8 @@
 		B4D12A682A201DE300A7681C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B4CE331C2A2122A70081AE7E /* InputContainerView.swift */,
+				B4CE331A2A2121ED0081AE7E /* CustomTextField.swift */,
 				B4CE33122A211A8C0081AE7E /* Cell */,
 			);
 			path = View;
@@ -329,6 +349,10 @@
 				B4D12A722A201EE800A7681C /* ConversationsController.swift in Sources */,
 				B4D12A3A2A201D4400A7681C /* SceneDelegate.swift in Sources */,
 				B4D12A6D2A201E1600A7681C /* Extensions.swift in Sources */,
+				B4CE33192A211F4B0081AE7E /* RegistrationController.swift in Sources */,
+				B4CE33172A211F380081AE7E /* LoginController.swift in Sources */,
+				B4CE331B2A2121ED0081AE7E /* CustomTextField.swift in Sources */,
+				B4CE331D2A2122A70081AE7E /* InputContainerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
