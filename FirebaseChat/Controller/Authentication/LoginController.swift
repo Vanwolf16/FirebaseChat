@@ -63,7 +63,17 @@ class LoginController: UIViewController {
     
     //MARK: Selector
     @objc func handleLogIn(){
-        print("You LogIn")
+        
+        guard let email = emailTextField.text,let passsword = passwordTextField.text else {return}
+        
+        AuthService.shared.logUserIn(withEmail: email,password: passsword) { result, error in
+            if let error = error{
+                print("Failed to login user: \(error.localizedDescription)")
+                return
+            }
+            self.dismiss(animated: true,completion: nil)
+        }
+        
     }
     
     @objc func handleShowSignUp(){

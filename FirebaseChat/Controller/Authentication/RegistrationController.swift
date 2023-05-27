@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class RegistrationController: UIViewController,UINavigationControllerDelegate{
    private var viewModel = RegistrationViewModel()
     
@@ -94,7 +95,20 @@ class RegistrationController: UIViewController,UINavigationControllerDelegate{
     }
     
     @objc func handleSignUpRegister(){
-        print("Register On the way")
+        guard let email = emailTxtField.text,let password = passwordTxtField.text, let fullname = fullNameField.text,let username = userNameField.text else {return}
+        guard let profileImage = profileImage else {return}
+        
+        let credentials = RegistrationCredentials(email: email, password: password, fullname: fullname, username: username, profileImage: profileImage)
+        
+        AuthService.shared.createUser(credentials: credentials) { error in
+            if let error = error{
+                print("Could not Sign Up User :( \(error.localizedDescription)")
+                return
+            }
+            
+            self.dismiss(animated: true)
+        }
+        
     }
     
     @objc func textDidChange(sender:UITextField){
