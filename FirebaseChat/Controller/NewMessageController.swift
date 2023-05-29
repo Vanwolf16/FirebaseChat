@@ -11,11 +11,20 @@ private let reuseId = "UserCell"
 
 class NewMessageController: UITableViewController {
     //MARK: Properties
-    
+    private var users = [User]()
     //MARK: LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        fetchUsers()
+    }
+    
+    //MARK: API
+    func fetchUsers(){
+        Service.fetchUsers { user in
+            self.users = user
+            self.tableView.reloadData()
+        }
     }
     
     //MARK: Helper
@@ -36,12 +45,12 @@ class NewMessageController: UITableViewController {
 //MARK: DataSource and Delegate
 extension NewMessageController{
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return users.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseId, for: indexPath) as? UserCell else {return UITableViewCell()}
-        
+        cell.user = users[indexPath.row]
         return cell
     }
 }
