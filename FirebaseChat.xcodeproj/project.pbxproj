@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5BB1114A888B1F7BEF41A2C7 /* Pods_FirebaseChatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6139ABFA8837F2A7A55F332 /* Pods_FirebaseChatTests.framework */; };
 		B461B9E42A2523DE00C7D86F /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461B9E32A2523DE00C7D86F /* NewMessageController.swift */; };
+		B461B9E62A25285600C7D86F /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461B9E52A25285600C7D86F /* UserCell.swift */; };
 		B476D3C82A227102008242E2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B476D3C72A227102008242E2 /* GoogleService-Info.plist */; };
 		B47D7FE72A22BC9700C6DEFA /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47D7FE62A22BC9700C6DEFA /* AuthService.swift */; };
 		B4CE33142A211ABF0081AE7E /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CE33132A211ABF0081AE7E /* ConversationCell.swift */; };
@@ -59,6 +60,7 @@
 		75BC1A87E0AFA8EB9CD620C0 /* Pods-FirebaseChatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChatTests.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseChatTests/Pods-FirebaseChatTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8B99CC708F97CA94FD035464 /* Pods-FirebaseChat-FirebaseChatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChat-FirebaseChatUITests.release.xcconfig"; path = "Target Support Files/Pods-FirebaseChat-FirebaseChatUITests/Pods-FirebaseChat-FirebaseChatUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B461B9E32A2523DE00C7D86F /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
+		B461B9E52A25285600C7D86F /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		B476D3C72A227102008242E2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B47D7FE62A22BC9700C6DEFA /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		B4CE33132A211ABF0081AE7E /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				B4CE33132A211ABF0081AE7E /* ConversationCell.swift */,
+				B461B9E52A25285600C7D86F /* UserCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				B4CE33142A211ABF0081AE7E /* ConversationCell.swift in Sources */,
 				B4D12A722A201EE800A7681C /* ConversationsController.swift in Sources */,
 				B47D7FE72A22BC9700C6DEFA /* AuthService.swift in Sources */,
+				B461B9E62A25285600C7D86F /* UserCell.swift in Sources */,
 				B4D12A3A2A201D4400A7681C /* SceneDelegate.swift in Sources */,
 				B4D12A6D2A201E1600A7681C /* Extensions.swift in Sources */,
 				B4CE33192A211F4B0081AE7E /* RegistrationController.swift in Sources */,

@@ -7,6 +7,8 @@
 
 import UIKit
 
+private let reuseId = "UserCell"
+
 class NewMessageController: UITableViewController {
     //MARK: Properties
     
@@ -17,21 +19,29 @@ class NewMessageController: UITableViewController {
     }
     
     //MARK: Helper
-    
-    //MARK: Selector
     func configureUI(){
-        view.backgroundColor = .systemRed
+        configureNavigationBar(withTitle: "New Message", prefersLargeTitles: false)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(handleDismissal))
+        
+        tableView.tableFooterView = UIView()
+        tableView.register(UserCell.self, forCellReuseIdentifier: reuseId)
+        tableView.rowHeight = 80
+    }
+    //MARK: Selector
+    @objc func handleDismissal(){
+        dismiss(animated: true)
+    }
+
+}
+//MARK: DataSource and Delegate
+extension NewMessageController{
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
     }
     
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseId, for: indexPath) as? UserCell else {return UITableViewCell()}
+        
+        return cell
     }
 }
