@@ -7,9 +7,16 @@
 
 import UIKit
 
+protocol CustomInputAccessoryViewDelegate:AnyObject{
+    func inputView(_ inputView:CustomInputAccessoryView,wantToSend message:String)
+}
+
 class CustomInputAccessoryView:UIView{
+    
+    weak var delegate:CustomInputAccessoryViewDelegate?
+    
     //MARK: Properties
-    private let messageInputTextView:UITextView = {
+    private var messageInputTextView:UITextView = {
         let tv = UITextView()
         tv.font = UIFont.systemFont(ofSize: 16)
         tv.isScrollEnabled = false
@@ -68,6 +75,12 @@ class CustomInputAccessoryView:UIView{
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: Helper
+    func clearMessageText(){
+        messageInputTextView.text = nil
+        placeholderLbl.isHidden = false
+    }
+    
     //MARK: Selector
     
     @objc func handleTextInputChange(){
@@ -75,6 +88,7 @@ class CustomInputAccessoryView:UIView{
     }
     
     @objc func handleSendMessage(){
-        print("DEBUG: Handle send message here..")
+        guard let message = messageInputTextView.text else {return}
+        delegate?.inputView(self, wantToSend: message)
     }
 }

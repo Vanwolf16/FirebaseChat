@@ -21,7 +21,24 @@ struct Service{
         }
     }
     
-    func uploadMessage(_ message:String, to user:User,completion:((Error?) -> Void)?){
+    static func fetchMessages(forUser user:User,completion:@escaping([Message]) -> Void){
+        var messages = [Message]()
+        guard let currentUid = Auth.auth().currentUser?.uid else {return}
+        let query = COLLECTIONMESSAGES.document(currentUid).collection(user.uid)
+            .order(by: "timestamp")
+        
+        query.addSnapshotListener { snapshot, error in
+            snapshot?.documentChanges.forEach({ change in
+                if change.type == .added{
+                    let dictornary = change.document.data()
+                    messages.append(Message(dictionary: dictornary))
+                    completion(messages)
+                }
+            })
+        }
+    }
+    
+   static func uploadMessage(_ message:String, to user:User,completion:((Error?) -> Void)?){
         guard let currentUid = Auth.auth().currentUser?.uid else {return}
         
         let data = ["text":message,
