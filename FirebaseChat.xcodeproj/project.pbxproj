@@ -11,6 +11,7 @@
 		B403FFB82A31101E00536AE6 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B403FFB72A31101E00536AE6 /* Message.swift */; };
 		B403FFBA2A31124300536AE6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B403FFB92A31124300536AE6 /* Constants.swift */; };
 		B403FFBC2A3114B600536AE6 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B403FFBB2A3114B600536AE6 /* ChatController.swift */; };
+		B43493322A328EF000B0CFA1 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43493312A328EF000B0CFA1 /* ConversationViewModel.swift */; };
 		B461B9E42A2523DE00C7D86F /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461B9E32A2523DE00C7D86F /* NewMessageController.swift */; };
 		B461B9E62A25285600C7D86F /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461B9E52A25285600C7D86F /* UserCell.swift */; };
 		B461B9E82A252D9600C7D86F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461B9E72A252D9600C7D86F /* User.swift */; };
@@ -70,6 +71,7 @@
 		B403FFB72A31101E00536AE6 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		B403FFB92A31124300536AE6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B403FFBB2A3114B600536AE6 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
+		B43493312A328EF000B0CFA1 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
 		B461B9E32A2523DE00C7D86F /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
 		B461B9E52A25285600C7D86F /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		B461B9E72A252D9600C7D86F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				B4CE33202A2127CC0081AE7E /* RegistrationViewModel.swift */,
 				B4CE331E2A2127C40081AE7E /* LoginViewModel.swift */,
 				B4A292842A3254C400D0085A /* MessageViewModel.swift */,
+				B43493312A328EF000B0CFA1 /* ConversationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				B4CE33142A211ABF0081AE7E /* ConversationCell.swift in Sources */,
 				B4A292832A324ADC00D0085A /* MessageCell.swift in Sources */,
 				B4D12A722A201EE800A7681C /* ConversationsController.swift in Sources */,
+				B43493322A328EF000B0CFA1 /* ConversationViewModel.swift in Sources */,
 				B47D7FE72A22BC9700C6DEFA /* AuthService.swift in Sources */,
 				B461B9E62A25285600C7D86F /* UserCell.swift in Sources */,
 				B4D12A3A2A201D4400A7681C /* SceneDelegate.swift in Sources */,

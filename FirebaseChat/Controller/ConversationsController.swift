@@ -13,6 +13,7 @@ private let reuseIdentifer = "ConversationCell"
 class ConversationsController: UIViewController {
     //MARK: Properties
     private let tableView = UITableView()
+    private var conversations = [Conversation]()
     
     private let newMessageBtn:UIButton = {
         let button = UIButton(type: .system)
@@ -29,9 +30,22 @@ class ConversationsController: UIViewController {
         super.viewDidLoad()
         configureUI()
         authenticateUser()
+        fetchConversations()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureNavigationBar(withTitle: "Messages", prefersLargeTitles: true)
     }
     
     //MARK: API
+    func fetchConversations(){
+        Service.fetchConversations { conversations in
+            self.conversations = conversations
+            self.tableView.reloadData()
+        }
+    }
+    
     func authenticateUser(){
         if Auth.auth().currentUser?.uid == nil{
             presentLoginScreen()
@@ -62,7 +76,7 @@ class ConversationsController: UIViewController {
     func configureUI(){
         view.backgroundColor = .white
         
-        configureNavigationBar()
+        //configureNavigationBar()
         configureTableView()
         
         let image = UIImage(systemName: "person.circle.fill")
@@ -116,18 +130,20 @@ class ConversationsController: UIViewController {
 extension ConversationsController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return conversations.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifer, for: indexPath) as? ConversationCell else {return UITableViewCell()}
-        cell.usernameLbl.text = "Test"
+        cell.conversations = conversations[indexPath.row]
         return cell
     }
     
     //Delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        let user = conversations[indexPath.row].user
+        let controller = ChatController(user: user)
+        navigationController?.pushViewController(controller, animated: true)
     }
     
 }
