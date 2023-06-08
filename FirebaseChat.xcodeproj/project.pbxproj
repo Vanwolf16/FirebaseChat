@@ -35,6 +35,7 @@
 		B4D12A5B2A201D4700A7681C /* FirebaseChatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D12A5A2A201D4700A7681C /* FirebaseChatUITestsLaunchTests.swift */; };
 		B4D12A6D2A201E1600A7681C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D12A6C2A201E1600A7681C /* Extensions.swift */; };
 		B4D12A722A201EE800A7681C /* ConversationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D12A712A201EE800A7681C /* ConversationsController.swift */; };
+		B4D9844D2A3125D600F4D5DE /* CustomInputAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D9844C2A3125D600F4D5DE /* CustomInputAccessoryView.swift */; };
 		BA4DA2088B3ED6129CEDE4D5 /* Pods_FirebaseChat_FirebaseChatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E971F3540215847B1B125B6 /* Pods_FirebaseChat_FirebaseChatUITests.framework */; };
 		DD94018004481042FB398C1B /* Pods_FirebaseChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB3597F610EAAE2709163A2 /* Pods_FirebaseChat.framework */; };
 /* End PBXBuildFile section */
@@ -95,6 +96,7 @@
 		B4D12A5A2A201D4700A7681C /* FirebaseChatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseChatUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B4D12A6C2A201E1600A7681C /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B4D12A712A201EE800A7681C /* ConversationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsController.swift; sourceTree = "<group>"; };
+		B4D9844C2A3125D600F4D5DE /* CustomInputAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputAccessoryView.swift; sourceTree = "<group>"; };
 		B6139ABFA8837F2A7A55F332 /* Pods_FirebaseChatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseChatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4449EFE77C1DEF43A5C3510 /* Pods-FirebaseChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseChat.release.xcconfig"; path = "Target Support Files/Pods-FirebaseChat/Pods-FirebaseChat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -245,6 +247,7 @@
 				B4CE331C2A2122A70081AE7E /* InputContainerView.swift */,
 				B4CE331A2A2121ED0081AE7E /* CustomTextField.swift */,
 				B4CE33122A211A8C0081AE7E /* Cell */,
+				B4D9844C2A3125D600F4D5DE /* CustomInputAccessoryView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 			files = (
 				B4D12A3C2A201D4400A7681C /* ViewController.swift in Sources */,
 				B403FFBA2A31124300536AE6 /* Constants.swift in Sources */,
+				B4D9844D2A3125D600F4D5DE /* CustomInputAccessoryView.swift in Sources */,
 				B4CE33212A2127CC0081AE7E /* RegistrationViewModel.swift in Sources */,
 				B403FFBC2A3114B600536AE6 /* ChatController.swift in Sources */,
 				B4D12A382A201D4400A7681C /* AppDelegate.swift in Sources */,
