@@ -11,6 +11,8 @@
 		B403FFB82A31101E00536AE6 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B403FFB72A31101E00536AE6 /* Message.swift */; };
 		B403FFBA2A31124300536AE6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B403FFB92A31124300536AE6 /* Constants.swift */; };
 		B403FFBC2A3114B600536AE6 /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B403FFBB2A3114B600536AE6 /* ChatController.swift */; };
+		B41103292A33B7D700875F6E /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41103282A33B7D700875F6E /* ProfileController.swift */; };
+		B411032C2A33B96A00875F6E /* ProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B411032B2A33B96A00875F6E /* ProfileHeader.swift */; };
 		B43493322A328EF000B0CFA1 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43493312A328EF000B0CFA1 /* ConversationViewModel.swift */; };
 		B461B9E42A2523DE00C7D86F /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461B9E32A2523DE00C7D86F /* NewMessageController.swift */; };
 		B461B9E62A25285600C7D86F /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B461B9E52A25285600C7D86F /* UserCell.swift */; };
@@ -71,6 +73,8 @@
 		B403FFB72A31101E00536AE6 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		B403FFB92A31124300536AE6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B403FFBB2A3114B600536AE6 /* ChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
+		B41103282A33B7D700875F6E /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		B411032B2A33B96A00875F6E /* ProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeader.swift; sourceTree = "<group>"; };
 		B43493312A328EF000B0CFA1 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
 		B461B9E32A2523DE00C7D86F /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
 		B461B9E52A25285600C7D86F /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -156,6 +160,14 @@
 				B6139ABFA8837F2A7A55F332 /* Pods_FirebaseChatTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B411032A2A33B93C00875F6E /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				B411032B2A33B96A00875F6E /* ProfileHeader.swift */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 		B4CE33122A211A8C0081AE7E /* Cell */ = {
@@ -244,6 +256,7 @@
 				B4D12A712A201EE800A7681C /* ConversationsController.swift */,
 				B461B9E32A2523DE00C7D86F /* NewMessageController.swift */,
 				B403FFBB2A3114B600536AE6 /* ChatController.swift */,
+				B41103282A33B7D700875F6E /* ProfileController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -251,6 +264,7 @@
 		B4D12A682A201DE300A7681C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B411032A2A33B93C00875F6E /* Header */,
 				B4CE331C2A2122A70081AE7E /* InputContainerView.swift */,
 				B4CE331A2A2121ED0081AE7E /* CustomTextField.swift */,
 				B4CE33122A211A8C0081AE7E /* Cell */,
@@ -537,6 +551,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B41103292A33B7D700875F6E /* ProfileController.swift in Sources */,
 				B4D12A3C2A201D4400A7681C /* ViewController.swift in Sources */,
 				B403FFBA2A31124300536AE6 /* Constants.swift in Sources */,
 				B4D9844D2A3125D600F4D5DE /* CustomInputAccessoryView.swift in Sources */,
@@ -554,6 +569,7 @@
 				B47D7FE72A22BC9700C6DEFA /* AuthService.swift in Sources */,
 				B461B9E62A25285600C7D86F /* UserCell.swift in Sources */,
 				B4D12A3A2A201D4400A7681C /* SceneDelegate.swift in Sources */,
+				B411032C2A33B96A00875F6E /* ProfileHeader.swift in Sources */,
 				B461B9EA2A252E2800C7D86F /* Service.swift in Sources */,
 				B4D12A6D2A201E1600A7681C /* Extensions.swift in Sources */,
 				B4CE33192A211F4B0081AE7E /* RegistrationController.swift in Sources */,
