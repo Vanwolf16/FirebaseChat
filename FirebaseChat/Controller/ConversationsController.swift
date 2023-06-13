@@ -79,6 +79,7 @@ class ConversationsController: UIViewController {
         //configureNavigationBar()
         configureTableView()
         
+        
         let image = UIImage(systemName: "person.circle.fill")
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .plain, target: self, action: #selector(showProfile))
         //NewMessageBtn
@@ -114,7 +115,8 @@ class ConversationsController: UIViewController {
     
     //MARK: Selector
     @objc func showProfile(){
-        let controller = ProfileController()
+        let controller = ProfileController(style: .insetGrouped)
+        controller.delegate = self
         let nav = UINavigationController(rootViewController: controller)
         nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true)
@@ -153,10 +155,16 @@ extension ConversationsController: UITableViewDelegate, UITableViewDataSource{
 
 extension ConversationsController:NewMessageControllerDelegate{
     func controller(_ controller: NewMessageController, wantsToStartChatWith user: User) {
-        controller.dismiss(animated: true)
+        dismiss(animated: true)
         let chat = ChatController(user: user)
         navigationController?.pushViewController(chat, animated: true)
     }
     
     
+}
+
+extension ConversationsController:ProfileControllerDelegate{
+    func handleLogout() {
+        logOut()
+    }
 }
