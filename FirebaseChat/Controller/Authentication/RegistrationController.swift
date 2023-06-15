@@ -11,6 +11,8 @@ import UIKit
 class RegistrationController: UIViewController,UINavigationControllerDelegate{
    private var viewModel = RegistrationViewModel()
     
+    weak var delegate:AuthenicationDelegate?
+    
     //MARK: Properties
     private var profileImage:UIImage?
     
@@ -107,6 +109,7 @@ class RegistrationController: UIViewController,UINavigationControllerDelegate{
             }
             
             self.dismiss(animated: true)
+            self.delegate?.authenticationComplete()
         }
         
     }

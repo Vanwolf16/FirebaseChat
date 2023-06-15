@@ -10,14 +10,15 @@ import Firebase
 struct Service{
     
     static func fetchUsers(completion: @escaping([User]) -> Void){
-        var users = [User]()
+        //var users = [User]()
         Firestore.firestore().collection("users").getDocuments { snapshot, error in
-            snapshot?.documents.forEach({ document in
-                let dictionary = document.data()
-                let user = User(dictionary: dictionary)
-                users.append(user)
-                completion(users)
-            })
+            guard var users = snapshot?.documents.map({ User(dictionary: $0.data())}) else {return}
+            //It Removes the currentUsers on the list
+            if let i = users.firstIndex(where: {$0.uid == Auth.auth().currentUser?.uid}){
+                users.remove(at: i)
+            }
+            
+            completion(users)
         }
     }
     
@@ -77,13 +78,14 @@ struct Service{
                 let dictionary = change.document.data()
                 let message = Message(dictionary: dictionary)
                 
-                self.fetchUser(withUid: message.toId) { user in
+                self.fetchUser(withUid: message.chatPartnerId) { user in
                     let conversation = Conversation(user: user, message: message)
                     conversations.append(conversation)
                     completion(conversations)
                 }
             })
         }
+        
     }
     
 }
